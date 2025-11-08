@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Your Name - Portfolio</title>
+  <style>
+:root{
+  --charcoal-0: #060708;   
+  --charcoal-1: #0e1417;   
+  --card: #0e1620;         
+  --muted: #98a4a6;        
+  --text: #e7f8f7;         
+  --teal: #14b8a6;         
+  --teal-2: #06b6d4;      
+  --glass: rgba(255,255,255,0.02);
+  --radius: 14px;
+  --maxw: 980px;
+  --gap: 20px;
+  --soft-shadow: 0 10px 30px rgba(2,6,23,0.6);
+}
+
+*{ box-sizing: border-box; }
+html,body{ height:100%; }
+body{
+  margin:0;
+  font-family: "Poppins", Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background:
+    radial-gradient(900px 360px at 8% 12%, rgba(20,184,166,0.03), transparent 8%),
+    radial-gradient(800px 320px at 92% 84%, rgba(6,182,212,0.02), transparent 8%),
+    linear-gradient(180deg, var(--charcoal-0) 0%, #03050a 100%);
+  color: var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.5;
+  padding: 32px 18px; 
+}
+
+.container{
+  max-width: var(--maxw);
+  margin: 0 auto;
+  background: linear-gradient(180deg, rgba(255,255,255,0.012), rgba(255,255,255,0.008));
+  border-radius: var(--radius);
+  padding: 32px; 
+  box-shadow: var(--soft-shadow);
+  border: 1px solid rgba(255,255,255,0.03);
+  overflow: hidden;
+}
+
+header{
+  text-align: center;       
+  margin-bottom: var(--gap);
+}
+.header-left{
+  display: flex;
+  flex-direction: column;  
+  align-items: center;    
+  gap: 16px;
+  width: 100%;
+}
+
+.profile-img{
+  width:160px;       /* ✅ bigger width */
+  height:160px;      /* ✅ bigger height */
+  border-radius:18px;
+  object-fit:cover;  /* ✅ makes sure full image is visible, not cropped */
+  background: #0e1417; /* ✅ optional: adds clean background behind image */
+  padding:2px;       /* ✅ small space around image */
+  border: 2px solid rgba(20,184,166,0.3);
+  box-shadow: 0 8px 28px rgba(20,184,166,0.15);
+  transition: transform .28s ease, box-shadow .28s ease;
+}
+
+.profile-img:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 18px 44px rgba(20,184,166,0.12);
+}
+
+.title-block h1{
+  margin:0;
+  font-size:1.6rem; 
+  letter-spacing:0.2px;
+  font-weight:600;
+  color:var(--text);
+}
+.title-block .tagline{
+  margin-top:6px; 
+  font-size:0.95rem; 
+  color:var(--muted);
+}
+
+.contact{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  justify-content: center; 
+  width: 100%;
+}
+
+.contact a{
+  display:inline-block;
+  padding:8px 10px; 
+  font-size:0.85rem; 
+  color:var(--muted);
+  text-decoration:none;
+  background: linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.005));
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,0.02);
+  transition: transform .18s ease, background .18s ease, color .18s ease;
+}
+.contact a strong{ color:var(--teal); font-weight:600; }
+.contact a:hover{ transform: translateY(-3px); color:var(--text); background: rgba(20,184,166,0.05); }
+
+.section-row{
+  display:grid;
+  grid-template-columns: 1fr 360px;
+  gap:28px; 
+  align-items:start;
+}
+@media (max-width:920px){
+  .section-row{ grid-template-columns: 1fr; }
+}
+section{
+  background: transparent;
+}
+
+h2{
+  margin:0 0 12px 0; 
+  font-size:1.05rem;
+  color:var(--text);
+  position:relative;
+  padding-bottom:6px;
+}
+h2::after{
+  content:"";
+  display:block;
+  width:56px;
+  height:4px;
+  border-radius:6px;
+  margin-top:8px;
+  background: linear-gradient(90deg, var(--teal), var(--teal-2));
+  opacity:0.95;
+}
+
+ul{ padding-left:18px; margin:0; color:var(--muted); } 
+li{ margin:8px 0; } 
+p{ margin:0 0 10px 0; color:var(--muted); } 
+
+.project{
+  background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));
+  border-radius:12px;
+  padding:14px 16px; 
+  margin-bottom:14px; 
+  box-shadow: 0 8px 20px rgba(2,6,23,0.36);
+  border:1px solid rgba(255,255,255,0.025);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.project:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 18px 46px rgba(2,6,23,0.48);
+}
+.project .title{ display:flex; align-items:center; gap:10px; margin-bottom:6px; }
+.project .title h3{ margin:0; font-size:1.02rem; color:var(--text); }
+.badge{
+  font-size:0.75rem;
+  padding:6px 8px;
+  border-radius:8px;
+  background: linear-gradient(90deg, rgba(20,184,166,0.14), rgba(6,182,212,0.06));
+  color:var(--text);
+  border:1px solid rgba(255,255,255,0.02);
+}
+
+.links{ margin-top:8px; display:flex; gap:10px; flex-wrap:wrap; } 
+.links a{
+  color:var(--teal);
+  text-decoration:none;
+  font-weight:600;
+  font-size:0.95rem;
+  background: transparent;
+  padding:6px 8px;
+  border-radius:8px;
+  transition: background .14s ease, color .14s ease, transform .14s ease;
+}
+.links a:hover{ color:#fff; background: rgba(20,184,166,0.08); transform: translateY(-3px); }
+
+.side-card{
+  background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));
+  border-radius:12px; 
+  padding:16px; 
+  border:1px solid rgba(255,255,255,0.02);
+  box-shadow: 0 8px 22px rgba(2,6,23,0.32);
+  margin-bottom:14px; 
+}
+.side-card h3{ margin:0 0 8px 0; font-size:0.98rem; color:var(--text); }
+
+footer{ text-align:center; color:var(--muted); margin-top:20px; font-size:0.92rem; }
+
+@media (max-width:640px){
+  .header-left{ flex-direction:column; align-items:flex-start; gap:12px; }
+  .contact{ margin-left:0; justify-content:flex-start; }
+  .profile-img{ width:100px; height:100px; border-radius:12px; }
+  .section-row{ gap:18px; }
+  .container{ padding:20px; }
+}
+</style>
+</head>
+<body>
+  <div class="container">
+    <header>
+        <img class="profile-img" src="self final.jpg" alt="Ayush Profile" />
+        <h1>Ayush Pathak</h1>
+        <p class="small">Aspiring Web Developer • B.Tech student • Passionate about coding & building new things.</p>
+    </header>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>
+            I'm <strong>Ayush Pathak</strong>. I study Computer Engineering and enjoy building web apps, solving DSA problems,
+            and building new things. I like to learn new tech and build useful, polished products.
+        </p>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <ul>
+        <li>HTML, CSS, JavaScript</li>
+        <li>React JS, Node JS</li>
+        <li>Data Structures & Algorithms (<a href="https://codolio.com/profile/Ayush1302" target="_blank">Codolio</a>)</li>
+      </ul>
+    </section>
+
+    <section id="interests">
+      <h2>Interests</h2>
+      <ul>
+        <li>Web Development</li>
+        <li>Competitive Programming</li>
+        <li>UI/UX</li>
+      </ul>
+    </section>
+
+    <section id="projects" class="projects">
+      <h2>Projects</h2>
+      <article>
+        <h3>Ruby Manor — Experience Luxury like never before</h3>
+        <p class="small">
+         Ruby Manor is a full-stack hotel booking web application designed to provide a seamless user experience for room reservations and dining services. It features secure authentication using Google OAuth, waitlist management, booking confirmation emails powered by Brevo, and a dynamic database handled through Supabase (PostgreSQL). The platform is built with React and styled using Tailwind CSS, ensuring a responsive and modern interface.
+        </p>
+        <p><a class="project-link" href="https://rubymanor.netlify.app/" target="_blank" rel="noopener">Project link</a>/<a href="https://github.com/Ayush-Pathak2006/Ruby_Manor" target="_blank" rel="noopener"> GitHub</a></p>
+      </article>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p class="small">
+        Email: <a href="mailto:ayushpathak13022006@gmail.com">ayushpathak13022006@gmail.com</a><br />
+        LinkedIn: <a href="https://www.linkedin.com/in/ayush-pathak-75a985293/" target="_blank" rel="noopener">LinkedIn - Ayush Pathak</a><br />
+        GitHub: <a href="https://github.com/Ayush-Pathak2006" target="_blank" rel="noopener">github.com/Ayush-Pathak2006</a>
+      </p>
+    </section>
+
+    <footer>
+      <p>Created by Ayush Pathak.</p>
+    </footer>
+  </div>
+</body>
+</html>
