@@ -1,48 +1,40 @@
 import Container from "../../components/common/Container";
 import Section from "../../components/common/Section";
 
-import ProjectCard from "./ProjectCard";
-import { projectsContent } from "./projects.config";
+import BuildPrinciples from "./BuildPrinciples";
+import { buildContent } from "./build.config";
 
-const Projects = () => {
+const Build = () => {
     return (
         <Section
-            id="projects"
+            id="build"
             className="py-20 md:py-24"
         >
             <Container>
                 <div className="border-t border-[var(--color-border)] pt-6">
                     <div className="grid gap-16 lg:grid-cols-[1fr_2fr]">
-                        {/* Section label */}
                         <div>
                             <p className="text-xs font-medium uppercase tracking-[0.2em] text-[var(--color-accent)]">
-                                {projectsContent.eyebrow}
+                                {buildContent.eyebrow}
                             </p>
                         </div>
 
-                        {/* Content */}
                         <div>
                             <h2 className="max-w-4xl text-[clamp(3rem,6vw,6rem)] font-semibold leading-[0.92] tracking-[-0.05em]">
-                                {projectsContent.title.primary}
+                                {buildContent.title.primary}
                                 <br />
-
                                 <span className="font-display font-normal text-[var(--color-text-secondary)]">
-                                    {projectsContent.title.secondary}
+                                    {buildContent.title.secondary}
                                 </span>
                             </h2>
 
-                            <p className="mt-10 max-w-2xl text-base leading-7 text-[var(--color-text-secondary)] md:text-lg md:leading-8">
-                                {projectsContent.intro}
+                            <p className="mt-12 max-w-2xl text-base leading-7 text-[var(--color-text-secondary)] md:text-lg md:leading-8">
+                                {buildContent.intro}
                             </p>
 
-                            <div className="mt-16 border-t border-[var(--color-border)]">
-                                {projectsContent.projects.map((project) => (
-                                    <ProjectCard
-                                        key={project.number}
-                                        project={project}
-                                    />
-                                ))}
-                            </div>
+                            <BuildPrinciples
+                                principles={buildContent.principles}
+                            />
                         </div>
                     </div>
                 </div>
@@ -51,4 +43,4 @@ const Projects = () => {
     );
 };
 
-export default Projects;
+export default Build;

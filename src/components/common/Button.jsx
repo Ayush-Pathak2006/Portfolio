@@ -1,8 +1,9 @@
 const VARIANTS = {
     primary:
-        "bg-[var(--color-text-primary)] text-black hover:opacity-90",
+        "text-[var(--color-text-primary)] hover:text-[var(--color-accent)]",
+
     secondary:
-        "border border-[var(--color-border)] bg-transparent text-[var(--color-text-primary)] hover:bg-[var(--color-surface)]",
+        "text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)]",
 };
 
 const Button = ({
@@ -13,9 +14,10 @@ const Button = ({
     className = "",
 }) => {
     const baseStyles =
-        "inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-medium transition-all duration-300";
+        "group inline-flex items-center justify-center text-sm font-medium transition-colors duration-300";
 
-    const variantStyles = VARIANTS[variant] ?? VARIANTS.primary;
+    const variantStyles =
+        VARIANTS[variant] ?? VARIANTS.primary;
 
     const styles = `${baseStyles} ${variantStyles} ${className}`;
 

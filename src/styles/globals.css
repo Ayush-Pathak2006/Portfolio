@@ -1,19 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap");
 @import "tailwindcss";
 
+
 :root {
-    --color-background: #08090b;
-    --color-surface: #101216;
-    --color-surface-elevated: #16191f;
+    /* Colors */
+    --color-background: #0b0b0a;
+    --color-surface: #11110f;
+    --color-surface-elevated: #171714;
 
-    --color-text-primary: #f5f5f5;
-    --color-text-secondary: #a1a1aa;
-    --color-text-muted: #71717a;
+    --color-text-primary: #f4f3ee;
+    --color-text-secondary: #a4a39d;
+    --color-text-muted: #686863;
 
-    --color-border: #27272a;
+    --color-border: rgba(244, 243, 238, 0.1);
+    --color-border-subtle: rgba(244, 243, 238, 0.06);
 
-    --color-accent: #8b5cf6;
+    --color-accent: #9b8cff;
+    --color-accent-soft: rgba(155, 140, 255, 0.12);
 
-    --max-content-width: 1280px;
+    /* Layout */
+    --max-content-width: 1400px;
+
+    --page-padding-mobile: 20px;
+    --page-padding-tablet: 40px;
+    --page-padding-desktop: 56px;
+
+    /* Radius */
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 20px;
+    --radius-pill: 999px;
+
+    /* Motion */
+    --duration-fast: 180ms;
+    --duration-normal: 300ms;
+    --duration-slow: 650ms;
+
+    --ease-standard: cubic-bezier(0.2, 0.8, 0.2, 1);
+    --ease-emphasized: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 html {
@@ -24,8 +48,11 @@ body {
     margin: 0;
     background: var(--color-background);
     color: var(--color-text-primary);
-    font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-        sans-serif;
+    font-family: "Manrope", system-ui, sans-serif;
+    
+}
+.font-display {
+    font-family: "Instrument Serif", Georgia, serif;
 }
 
 * {
