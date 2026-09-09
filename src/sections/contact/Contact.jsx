@@ -18,10 +18,10 @@ const Contact = () => {
   };
 
   return (
-    <Section id="contact" className="py-20 md:py-24">
+    <Section id="contact" className="py-20 md:py-28">
       <Container>
         <div className="border-t border-[var(--color-border)] pt-6">
-          <div className="grid gap-16 lg:grid-cols-[1fr_2fr]">
+          <div className="grid gap-10 md:gap-12 lg:grid-cols-[1fr_2fr] lg:gap-16">
             <div>
               <p className="text-xs font-medium uppercase tracking-[0.2em] text-[var(--color-accent)]">
                 {contactContent.eyebrow}
@@ -53,7 +53,7 @@ const Contact = () => {
                 </div>
 
                 <div className="border-b border-[var(--color-border)] px-5 py-4">
-    `            <div className="flex flex-wrap items-center gap-3">
+                <div className="flex flex-wrap items-center gap-3">
                     <span className="text-xs text-[var(--color-text-muted)]">
                     To
                     </span>
@@ -62,7 +62,7 @@ const Contact = () => {
                     ayushpathak13022006@gmail.com
                     </span>
                 </div>
-                </div>`
+                </div>
 
                 <div className="border-b border-[var(--color-border)] px-5 py-4">
                   <label

@@ -8,11 +8,11 @@ const Projects = () => {
     return (
         <Section
             id="projects"
-            className="py-20 md:py-24"
+            className="py-20 md:py-20"
         >
             <Container>
                 <div className="border-t border-[var(--color-border)] pt-6">
-                    <div className="grid gap-16 lg:grid-cols-[1fr_2fr]">
+                    <div className="grid gap-10 md:gap-12 lg:grid-cols-[1fr_2fr] lg:gap-16">
                         {/* Section label */}
                         <div>
                             <p className="text-xs font-medium uppercase tracking-[0.2em] text-[var(--color-accent)]">

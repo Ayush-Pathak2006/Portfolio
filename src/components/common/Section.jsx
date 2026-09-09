@@ -6,7 +6,7 @@ const Section = ({
     return (
         <section
             id={id}
-            className={`relative w-full py-24 md:py-32 ${className}`}
+            className={`relative w-full py-16 md:py-24 ${className}`}
         >
             {children}
         </section>
