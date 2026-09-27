@@ -1,9 +1,12 @@
-const VARIANTS = {
+const VARIANT_STYLES = {
     primary:
         "text-[var(--color-text-primary)] hover:text-[var(--color-accent)]",
-
     secondary:
         "text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)]",
+    pill:
+        "rounded-full border border-[var(--color-border)] px-4 py-2 text-xs font-medium text-[var(--color-text-secondary)] hover:border-[var(--color-text-muted)] hover:text-[var(--color-text-primary)]",
+    solid:
+        "rounded-full bg-[var(--color-text-primary)] px-4 py-2 text-xs font-medium text-[var(--color-background)] hover:bg-[var(--color-accent)] hover:text-[var(--color-background)]",
 };
 
 const Button = ({
@@ -11,30 +14,36 @@ const Button = ({
     variant = "primary",
     href,
     onClick,
+    type = "button",
     className = "",
+    external = false,
+    ...props
 }) => {
-    const baseStyles =
-        "group inline-flex items-center justify-center text-sm font-medium transition-colors duration-300";
+    const isPlain = variant === "primary" || variant === "secondary";
+    const baseStyles = isPlain
+        ? "group inline-flex items-center justify-center text-sm font-medium transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--color-accent)]"
+        : "inline-flex items-center justify-center gap-2 transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent)]";
 
-    const variantStyles =
-        VARIANTS[variant] ?? VARIANTS.primary;
-
-    const styles = `${baseStyles} ${variantStyles} ${className}`;
+    const styles = `${baseStyles} ${VARIANT_STYLES[variant] ?? VARIANT_STYLES.primary} ${className}`;
 
     if (href) {
         return (
-            <a href={href} className={styles}>
+            <a
+                href={href}
+                onClick={onClick}
+                className={styles}
+                {...(external
+                    ? { target: "_blank", rel: "noopener noreferrer" }
+                    : {})}
+                {...props}
+            >
                 {children}
             </a>
         );
     }
 
     return (
-        <button
-            type="button"
-            onClick={onClick}
-            className={styles}
-        >
+        <button type={type} onClick={onClick} className={styles} {...props}>
             {children}
         </button>
     );

@@ -1,20 +1,18 @@
 import Button from "../../components/common/Button";
+import { heroContent } from "./hero.config";
 
 const HeroActions = () => {
     return (
         <div className="flex flex-wrap items-center gap-6">
-            <Button href="#projects">
-                View my work
+            <Button href={heroContent.primaryCta.href}>
+                {heroContent.primaryCta.label}
                 <span className="ml-2 transition-transform duration-300 group-hover:translate-x-1">
                     ↘
                 </span>
             </Button>
 
-            <Button
-                href="#contact"
-                variant="secondary"
-            >
-                Let's talk ↗
+            <Button href={heroContent.secondaryCta.href} variant="secondary">
+                {heroContent.secondaryCta.label} ↗
             </Button>
         </div>
     );

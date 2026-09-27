@@ -1,14 +1,14 @@
 export const fadeInUp = {
     hidden: {
         opacity: 0,
-        y: 24,
+        y: 16,
     },
 
     visible: {
         opacity: 1,
         y: 0,
         transition: {
-            duration: 0.6,
+            duration: 0.55,
             ease: [0.16, 1, 0.3, 1],
         },
     },

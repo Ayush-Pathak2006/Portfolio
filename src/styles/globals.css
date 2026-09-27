@@ -1,69 +1,178 @@
-@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap");
 @import "tailwindcss";
 
-
 :root {
-    /* Colors */
-    --color-background: #0b0b0a;
-    --color-surface: #11110f;
-    --color-surface-elevated: #171714;
-
-    --color-text-primary: #f4f3ee;
-    --color-text-secondary: #a4a39d;
-    --color-text-muted: #686863;
-
-    --color-border: rgba(244, 243, 238, 0.1);
-    --color-border-subtle: rgba(244, 243, 238, 0.06);
-
-    --color-accent: #9b8cff;
-    --color-accent-soft: rgba(155, 140, 255, 0.12);
-
-    /* Layout */
-    --max-content-width: 1400px;
-
-    --page-padding-mobile: 20px;
-    --page-padding-tablet: 40px;
-    --page-padding-desktop: 56px;
-
-    /* Radius */
-    --radius-sm: 8px;
-    --radius-md: 14px;
-    --radius-lg: 20px;
-    --radius-pill: 999px;
-
-    /* Motion */
-    --duration-fast: 180ms;
-    --duration-normal: 300ms;
-    --duration-slow: 650ms;
-
-    --ease-standard: cubic-bezier(0.2, 0.8, 0.2, 1);
-    --ease-emphasized: cubic-bezier(0.16, 1, 0.3, 1);
+    --color-black: #0b0a0c;
+    --color-graphite: #131217;
+    --color-graphite-2: #0f0e12;
+    --color-paper: #f2eee8;
+    --color-mute: #9a938c;
+    --color-mute-dim: #5f5a56;
+    --color-lavender: #a99cc2;
+    --color-lavender-dim: #6f6580;
+    --color-rust: #bd8a5c;
+    --color-line: rgba(242, 238, 232, 0.1);
+    --color-line-strong: rgba(242, 238, 232, 0.18);
 }
 
-html {
-    scroll-behavior: smooth;
+/* Exposes the palette and fonts as Tailwind utilities: bg-graphite, text-mute,
+   border-line-strong, font-display, etc. */
+@theme inline {
+    --color-black: var(--color-black);
+    --color-graphite: var(--color-graphite);
+    --color-graphite-2: var(--color-graphite-2);
+    --color-paper: var(--color-paper);
+    --color-mute: var(--color-mute);
+    --color-mute-dim: var(--color-mute-dim);
+    --color-lavender: var(--color-lavender);
+    --color-lavender-dim: var(--color-lavender-dim);
+    --color-rust: var(--color-rust);
+    --color-line: var(--color-line);
+    --color-line-strong: var(--color-line-strong);
+
+    --font-display: "Fraunces", Georgia, serif;
+    --font-sans: "Inter", system-ui, sans-serif;
+    --font-mono: "JetBrains Mono", ui-monospace, Consolas, monospace;
 }
 
-body {
-    margin: 0;
-    background: var(--color-background);
-    color: var(--color-text-primary);
-    font-family: "Manrope", system-ui, sans-serif;
-    
-}
-.font-display {
-    font-family: "Instrument Serif", Georgia, serif;
+/* Resets live in the base layer so Tailwind utilities (text-mute, font-mono…)
+   can override them — unlayered rules would beat every utility. */
+@layer base {
+    * {
+        box-sizing: border-box;
+    }
+
+    html {
+        background: var(--color-black);
+        scroll-behavior: auto;
+    }
+
+    body {
+        margin: 0;
+        background: var(--color-black);
+        color: var(--color-paper);
+        font-family: var(--font-sans);
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    ::selection {
+        background: var(--color-lavender);
+        color: var(--color-black);
+    }
+
+    ::-webkit-scrollbar {
+        width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: var(--color-line-strong);
+        border-radius: 0;
+    }
+
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    button {
+        font-family: inherit;
+        cursor: pointer;
+    }
+
+    :focus-visible {
+        outline: 1px solid var(--color-lavender);
+        outline-offset: 4px;
+    }
 }
 
-* {
-    box-sizing: border-box;
+/* The custom cursor replaces the native one only on real mouse devices. */
+@media (pointer: fine) {
+    html.cursor-ready,
+    html.cursor-ready * {
+        cursor: none !important;
+    }
+
+    html.cursor-ready input,
+    html.cursor-ready textarea {
+        cursor: text !important;
+    }
 }
 
-/* a {
-    color: inherit;
-    text-decoration: none;
+@media (pointer: coarse), (hover: none) {
+    html.cursor-ready,
+    html.cursor-ready * {
+        cursor: auto !important;
+    }
 }
 
-button {
-    font: inherit;
-} */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.no-scrollbar {
+    scrollbar-width: none;
+}
+
+/* Film grain. Transform-only so it stays on the compositor; the layer is
+   oversized so the shift never exposes an edge. */
+@keyframes grain-drift {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    20% {
+        transform: translate3d(-40px, 20px, 0);
+    }
+    40% {
+        transform: translate3d(25px, -35px, 0);
+    }
+    60% {
+        transform: translate3d(-15px, 45px, 0);
+    }
+    80% {
+        transform: translate3d(35px, 15px, 0);
+    }
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.grain-drift {
+    animation: grain-drift 7s steps(5, end) infinite;
+    will-change: transform;
+}
+
+/* Soft edges for horizontal rails, so items enter and leave rather than
+   being chopped by the viewport. */
+.mask-fade-x {
+    mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .grain-drift {
+        animation: none !important;
+        will-change: auto;
+    }
+}

@@ -1,38 +1,52 @@
+import { motion } from "framer-motion";
+import { heroContent } from "./hero.config";
 import HeroActions from "./HeroActions";
+import { fadeInUp, staggerContainer } from "../../lib/animations";
 
 const HeroContent = () => {
     return (
-        <div className="max-w-6xl pb-12 md:pb-16">
-            <div className="mb-8 flex items-center gap-3 text-xs font-medium uppercase tracking-[0.2em] text-[var(--color-text-muted)]">
+        <motion.div
+            className="max-w-3xl"
+            initial="hidden"
+            animate="visible"
+            variants={staggerContainer}
+        >
+            <motion.div
+                className="mb-8 flex items-center gap-3 text-xs font-medium uppercase tracking-[0.2em] text-[var(--color-text-muted)]"
+                variants={fadeInUp}
+            >
                 <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-accent)]" />
+                <span>{heroContent.eyebrow}</span>
+            </motion.div>
 
-                <span>Software Engineer</span>
-            </div>
-
-            <h1 className="max-w-5xl text-[clamp(4rem,9vw,8.5rem)] font-semibold leading-[0.88] tracking-[-0.055em]">
-                I build
+            <motion.h1
+                className="text-[clamp(3rem,7.4vw,7.25rem)] font-semibold leading-[0.88] tracking-[-0.055em]"
+                variants={fadeInUp}
+            >
+                {heroContent.headline.primary}
                 <span className="font-display font-normal text-[var(--color-text-secondary)]">
                     {" "}
-                    software
+                    {heroContent.headline.accent}
                 </span>
-                <br />
-                for the real
-                <br />
-                world.
-            </h1>
+                {heroContent.headline.rest.map((line) => (
+                    <span key={line}>
+                        <br />
+                        {line}
+                    </span>
+                ))}
+            </motion.h1>
 
-            <div className="mt-10 flex flex-col gap-8 border-t border-[var(--color-border)] pt-8 md:flex-row md:items-end md:justify-between">
+            <motion.div
+                className="mt-10 flex flex-col gap-8 border-t border-[var(--color-border)] pt-8"
+                variants={fadeInUp}
+            >
                 <p className="max-w-xl text-base leading-7 text-[var(--color-text-secondary)] md:text-lg">
-                    Full-stack developer interested in building
-                    useful products across the frontend, backend,
-                    data and intelligent systems.
+                    {heroContent.description}
                 </p>
 
-                <div className="shrink-0">
-                    <HeroActions />
-                </div>
-            </div>
-        </div>
+                <HeroActions />
+            </motion.div>
+        </motion.div>
     );
 };
 
