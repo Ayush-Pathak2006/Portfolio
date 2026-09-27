@@ -39,7 +39,7 @@ export const heroStatusLines = [
 
 export const about = {
     statement:
-        "I like taking a messy idea and turning it into something a person can click, book, search, or rely on.",
+        "I like taking simple ideas and overcomplicating them until they start looking good.",
     lines: [
         "Full-stack developer.",
         "B.Tech AI & ML student.",
@@ -84,13 +84,13 @@ export const projectsIntro = {
 const projectExtras = {
     "Video Treasure": {
         id: "video-treasure",
-        tone: "lavender",
+        tone: "accent",
         status: "Live · Vercel",
         note: "Built because tab-hopping between video sites felt like a job.",
     },
     "Ruby Manor": {
         id: "ruby-manor",
-        tone: "rust",
+        tone: "mint",
         status: "Live · Netlify",
         note: "A booking flow is mostly edge cases wearing a nice layout.",
     },
@@ -149,7 +149,7 @@ export const currently = [
 export const currentlyAside = "Four fields. At least one is aspirational.";
 
 export const sectionAsides = {
-    build: "Roughly in order of how confidently I'd talk about them.",
+    build: "Roughly in order of how much of my week they take up.",
     work: "Two products. Both live, both still getting small fixes.",
     experience: "A tidy timeline for a sequence of events that was not tidy.",
     currently: "Accurate as of whenever I last remembered to update this.",

@@ -10,7 +10,7 @@ import SectionHeader from "./SectionHeader";
 const WhatIBuild = () => (
     <section id="build" className="relative bg-graphite px-6 py-28 sm:px-10 md:px-16 md:py-40">
         <div className="mx-auto max-w-5xl">
-            <SectionHeader title="Things I Build" aside={sectionAsides.build} className="mb-16 md:mb-24" />
+            <SectionHeader title="Where I Spend My Time" aside={sectionAsides.build} className="mb-16 md:mb-24" />
 
             <div className="flex flex-col">
                 {buildCategories.map((category, i) => (
@@ -20,7 +20,7 @@ const WhatIBuild = () => (
                         <div className="flex flex-col gap-2 py-8 md:flex-row md:items-baseline md:gap-10 md:py-14">
                             {/* The index drifts slower than the title — that's what separates the rows. */}
                             <Parallax speed={0.3} distance={70} className="md:w-12">
-                                <span className="font-mono text-xs text-lavender-dim">{category.index}</span>
+                                <span className="font-mono text-xs text-accent-dim">{category.index}</span>
                             </Parallax>
 
                             <div className="md:w-[38%]">

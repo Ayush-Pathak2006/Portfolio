@@ -61,19 +61,19 @@ const Field = ({ id, label, value, onChange, onBlur, error, type = "text", texta
             <label
                 htmlFor={id}
                 className={`group relative flex flex-col gap-2 border-b pb-3 transition-colors ${
-                    error ? "border-rust" : "border-line focus-within:border-lavender"
+                    error ? "border-danger" : "border-line focus-within:border-accent"
                 }`}
             >
                 {/* The rule draws in from the left as the field takes focus. */}
                 {!error && (
                     <span
                         aria-hidden="true"
-                        className="absolute -bottom-px left-0 h-px w-full origin-left scale-x-0 bg-lavender transition-transform duration-500 ease-out group-focus-within:scale-x-100"
+                        className="absolute -bottom-px left-0 h-px w-full origin-left scale-x-0 bg-accent transition-transform duration-500 ease-out group-focus-within:scale-x-100"
                     />
                 )}
                 <span
                     className={`font-mono text-[10px] uppercase tracking-[0.2em] transition-colors ${
-                        error ? "text-rust" : "text-mute-dim group-focus-within:text-lavender"
+                        error ? "text-danger" : "text-mute-dim group-focus-within:text-accent"
                     }`}
                 >
                     {label}
@@ -98,7 +98,7 @@ const Field = ({ id, label, value, onChange, onBlur, error, type = "text", texta
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -4 }}
                         transition={{ duration: 0.2 }}
-                        className="font-mono text-xs text-rust"
+                        className="font-mono text-xs text-danger"
                     >
                         {error}
                     </motion.p>
@@ -199,12 +199,12 @@ const Contact = () => {
                                         <button
                                             type="submit"
                                             data-cursor="SAY HI"
-                                            className="group relative flex items-center gap-3 overflow-hidden border border-line-strong px-6 py-3 font-mono text-xs uppercase tracking-[0.2em] text-paper transition-colors hover:border-lavender hover:text-lavender"
+                                            className="group relative flex items-center gap-3 overflow-hidden border border-line-strong px-6 py-3 font-mono text-xs uppercase tracking-[0.2em] text-paper transition-colors hover:border-accent hover:text-accent"
                                         >
                                             {/* Fill wipes in from the left on hover. Transform-only. */}
                                             <span
                                                 aria-hidden="true"
-                                                className="absolute inset-0 origin-left scale-x-0 bg-lavender/10 transition-transform duration-500 ease-out group-hover:scale-x-100"
+                                                className="absolute inset-0 origin-left scale-x-0 bg-accent/10 transition-transform duration-500 ease-out group-hover:scale-x-100"
                                             />
                                             <span className="relative">Send it</span>
                                             <span
@@ -251,7 +251,7 @@ const Contact = () => {
                                     duration={0.9}
                                     amount={0.3}
                                     pad={0.12}
-                                    className="block font-display text-[11vw] italic leading-tight text-lavender sm:text-[6.5vw] md:text-[4vw]"
+                                    className="block font-display text-[11vw] italic leading-tight text-accent sm:text-[6.5vw] md:text-[4vw]"
                                 >
                                     Almost gone.
                                 </RevealText>

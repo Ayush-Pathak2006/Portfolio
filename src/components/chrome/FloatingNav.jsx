@@ -110,7 +110,7 @@ const FloatingNav = () => {
                                             {active && (
                                                 <motion.span
                                                     layoutId="navActiveDot"
-                                                    className="absolute -bottom-1.5 left-1/2 block h-[3px] w-[3px] -translate-x-1/2 rounded-full bg-lavender"
+                                                    className="absolute -bottom-1.5 left-1/2 block h-[3px] w-[3px] -translate-x-1/2 rounded-full bg-accent"
                                                     transition={{ type: "spring", stiffness: 380, damping: 30 }}
                                                 />
                                             )}

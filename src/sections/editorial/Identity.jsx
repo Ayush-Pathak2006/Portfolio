@@ -55,7 +55,7 @@ const Identity = () => {
                                     animate={{ opacity: 1 }}
                                     exit={reduce ? undefined : { opacity: 0 }}
                                     transition={{ duration: reduce ? 0 : 0.45 }}
-                                    className="text-lavender"
+                                    className="text-accent"
                                 >
                                     {about.rotating[idx]}
                                 </motion.p>

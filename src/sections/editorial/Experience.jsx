@@ -29,7 +29,7 @@ const Experience = () => (
                         {/* The big year drifts slowest — it reads as the layer furthest back. */}
                         <Parallax speed={0.42} distance={110} className="shrink-0 md:w-44">
                             <div className="flex flex-col">
-                                <span className="font-display text-[16vw] italic leading-none text-lavender-dim sm:text-[9vw] md:text-[4vw]">
+                                <span className="font-display text-[16vw] italic leading-none text-accent-dim sm:text-[9vw] md:text-[4vw]">
                                     {entry.year}
                                 </span>
                                 {entry.period && (

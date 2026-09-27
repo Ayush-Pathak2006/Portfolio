@@ -1,17 +1,19 @@
 @import "tailwindcss";
 
+/* Cool, blue-tinted neutrals with a soft blue accent and a mint secondary. */
 :root {
-    --color-black: #0b0a0c;
-    --color-graphite: #131217;
-    --color-graphite-2: #0f0e12;
-    --color-paper: #f2eee8;
-    --color-mute: #9a938c;
-    --color-mute-dim: #5f5a56;
-    --color-lavender: #a99cc2;
-    --color-lavender-dim: #6f6580;
-    --color-rust: #bd8a5c;
-    --color-line: rgba(242, 238, 232, 0.1);
-    --color-line-strong: rgba(242, 238, 232, 0.18);
+    --color-black: #0a0b0e;
+    --color-graphite: #111318;
+    --color-graphite-2: #0d0f13;
+    --color-paper: #e9ebef;
+    --color-mute: #8d929c;
+    --color-mute-dim: #585d67;
+    --color-accent: #7aa7ff;
+    --color-accent-dim: #4f6a99;
+    --color-mint: #5ec4a6;
+    --color-danger: #e5736b;
+    --color-line: rgba(233, 235, 239, 0.1);
+    --color-line-strong: rgba(233, 235, 239, 0.18);
 }
 
 /* Exposes the palette and fonts as Tailwind utilities: bg-graphite, text-mute,
@@ -23,9 +25,10 @@
     --color-paper: var(--color-paper);
     --color-mute: var(--color-mute);
     --color-mute-dim: var(--color-mute-dim);
-    --color-lavender: var(--color-lavender);
-    --color-lavender-dim: var(--color-lavender-dim);
-    --color-rust: var(--color-rust);
+    --color-accent: var(--color-accent);
+    --color-accent-dim: var(--color-accent-dim);
+    --color-mint: var(--color-mint);
+    --color-danger: var(--color-danger);
     --color-line: var(--color-line);
     --color-line-strong: var(--color-line-strong);
 
@@ -56,7 +59,7 @@
     }
 
     ::selection {
-        background: var(--color-lavender);
+        background: var(--color-accent);
         color: var(--color-black);
     }
 
@@ -82,7 +85,7 @@
     }
 
     :focus-visible {
-        outline: 1px solid var(--color-lavender);
+        outline: 1px solid var(--color-accent);
         outline-offset: 4px;
     }
 }

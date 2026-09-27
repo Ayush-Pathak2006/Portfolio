@@ -22,7 +22,7 @@ const Currently = () => (
                             viewport={{ once: true, amount: 0.6 }}
                             transition={{ duration: 0.7, delay: diagonal * STAGGER.loose, ease: EASE.out }}
                         >
-                            <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-lavender-dim">
+                            <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-accent-dim">
                                 {item.label}
                             </span>
                             <RevealText

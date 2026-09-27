@@ -57,7 +57,7 @@ const Loader = ({ onDone }) => {
                 >
                     <div
                         aria-hidden="true"
-                        className="pointer-events-none absolute left-1/2 top-1/2 h-[60vh] w-[60vh] -translate-x-1/2 -translate-y-1/2 rounded-full bg-lavender/[0.06] blur-[120px]"
+                        className="pointer-events-none absolute left-1/2 top-1/2 h-[60vh] w-[60vh] -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent/[0.06] blur-[120px]"
                     />
 
                     {/* Type leaves first, then the panel lifts — a staged curtain call. */}

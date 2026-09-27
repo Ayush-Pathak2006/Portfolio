@@ -92,12 +92,12 @@ const CustomCursor = () => {
                     width: size,
                     height: size,
                     backgroundColor: label
-                        ? "var(--color-lavender)"
+                        ? "var(--color-accent)"
                         : hovering
-                          ? "rgba(242, 238, 232, 0.2)"
+                          ? "rgba(233, 235, 239, 0.2)"
                           : "var(--color-paper)",
                     // rgba with zero alpha, not "transparent" — motion can't tween keywords.
-                    borderColor: hovering && !label ? "var(--color-lavender)" : "rgba(169, 156, 194, 0)",
+                    borderColor: hovering && !label ? "var(--color-accent)" : "rgba(122, 167, 255, 0)",
                     scale: hovering && !label ? 1.25 : 1,
                 }}
                 transition={{ type: "spring", stiffness: 400, damping: 28 }}

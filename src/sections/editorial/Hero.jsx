@@ -64,7 +64,7 @@ const Hero = () => {
             <div className="relative flex min-h-[100dvh] w-full flex-col justify-between px-6 pb-8 pt-24 sm:px-10 md:sticky md:top-0 md:h-screen md:flex-row md:items-center md:overflow-hidden md:px-16 md:py-0">
                 <motion.div
                     style={{ opacity: bgOpacity }}
-                    className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_72%_38%,rgba(169,156,194,0.10),transparent_58%)]"
+                    className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_72%_38%,rgba(122, 167, 255,0.10),transparent_58%)]"
                 />
 
                 {/* Desktop portrait — offset right, overlapping the type column. */}

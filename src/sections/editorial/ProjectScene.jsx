@@ -7,8 +7,8 @@ import Magnetic from "../../components/motion/Magnetic";
 import ScrollCounter from "../../components/motion/ScrollCounter";
 
 const toneMap = {
-    lavender: { text: "text-lavender", border: "border-lavender-dim/50", dot: "bg-lavender" },
-    rust: { text: "text-rust", border: "border-rust/40", dot: "bg-rust" },
+    accent: { text: "text-accent", border: "border-accent-dim/50", dot: "bg-accent" },
+    mint: { text: "text-mint", border: "border-mint/40", dot: "bg-mint" },
     mute: { text: "text-mute", border: "border-line-strong", dot: "bg-mute" },
 };
 
@@ -25,7 +25,7 @@ const beatGroup = {
 
 const GRID_TEXTURE = {
     backgroundImage:
-        "linear-gradient(rgba(242,238,232,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(242,238,232,0.06) 1px, transparent 1px)",
+        "linear-gradient(rgba(233, 235, 239,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(233, 235, 239,0.06) 1px, transparent 1px)",
     backgroundSize: "36px 36px",
 };
 

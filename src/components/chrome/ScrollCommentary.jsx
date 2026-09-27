@@ -75,7 +75,7 @@ const ScrollCommentary = () => {
                         animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                         exit={{ opacity: 0, y: -6, filter: "blur(3px)" }}
                         transition={{ duration: 0.55, ease: EASE.out }}
-                        className="border-l border-lavender-dim pl-3 font-mono text-[10px] leading-relaxed tracking-wide text-mute md:text-[11px]"
+                        className="border-l border-accent-dim pl-3 font-mono text-[10px] leading-relaxed tracking-wide text-mute md:text-[11px]"
                     >
                         {message}
                     </motion.p>

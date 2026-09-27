@@ -72,8 +72,8 @@ const TechIndex = () => {
             {/* Clipping lives on this wrapper, not the section: an overflow-hidden
                 ancestor would stop the rail below from pinning. */}
             <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
-                <div className="absolute -left-40 top-1/4 h-96 w-96 rounded-full bg-lavender/5 blur-[140px]" />
-                <div className="absolute -right-40 bottom-1/4 h-96 w-96 rounded-full bg-rust/5 blur-[140px]" />
+                <div className="absolute -left-40 top-1/4 h-96 w-96 rounded-full bg-accent/5 blur-[140px]" />
+                <div className="absolute -right-40 bottom-1/4 h-96 w-96 rounded-full bg-mint/5 blur-[140px]" />
             </div>
 
             <div className="mx-auto max-w-6xl">
@@ -86,7 +86,7 @@ const TechIndex = () => {
                             transition={{ duration: 0.7 }}
                             className="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.3em] text-mute-dim"
                         >
-                            <span className="inline-block h-1.5 w-1.5 animate-pulse rounded-full bg-lavender" />
+                            <span className="inline-block h-1.5 w-1.5 animate-pulse rounded-full bg-accent" />
                             <span>04 / Stack</span>
                         </motion.div>
 
@@ -145,14 +145,14 @@ const TechIndex = () => {
                                     data-cursor="CLICK"
                                     className={cn(
                                         "relative pb-1 font-mono text-[11px] uppercase tracking-widest transition-colors",
-                                        selected ? "font-medium text-lavender" : "text-mute-dim hover:text-paper"
+                                        selected ? "font-medium text-accent" : "text-mute-dim hover:text-paper"
                                     )}
                                 >
                                     {category.label}
                                     {selected && (
                                         <motion.span
                                             layoutId="activeCategoryUnderline"
-                                            className="absolute bottom-0 left-0 right-0 h-[1.5px] bg-lavender"
+                                            className="absolute bottom-0 left-0 right-0 h-[1.5px] bg-accent"
                                             transition={{ type: "spring", stiffness: 380, damping: 30 }}
                                         />
                                     )}
@@ -181,7 +181,7 @@ const TechIndex = () => {
                                             <h3 className="font-display text-xl italic text-paper sm:text-2xl">
                                                 {currentItem.name}
                                             </h3>
-                                            <span className="rounded-full border border-line px-2.5 py-0.5 font-mono text-[10px] uppercase tracking-wider text-lavender">
+                                            <span className="rounded-full border border-line px-2.5 py-0.5 font-mono text-[10px] uppercase tracking-wider text-accent">
                                                 {currentItem.categoryLabel}
                                             </span>
                                         </div>
@@ -190,7 +190,7 @@ const TechIndex = () => {
                                 </div>
 
                                 {currentItem.joke ? (
-                                    <div className="border-l-2 border-lavender/40 py-0.5 pl-3.5 sm:max-w-md">
+                                    <div className="border-l-2 border-accent/40 py-0.5 pl-3.5 sm:max-w-md">
                                         <p className="font-display text-xs italic leading-snug text-paper/90 sm:text-sm">
                                             &ldquo;{currentItem.joke}&rdquo;
                                         </p>
@@ -228,12 +228,12 @@ const TechIndex = () => {
                                 className={cn(
                                     "group relative flex h-full min-h-[200px] w-full flex-col justify-between overflow-hidden rounded-2xl border p-6 text-left transition-all duration-500 sm:min-h-[230px] sm:p-7",
                                     currentItem.id === featured.id
-                                        ? "border-lavender/60 bg-gradient-to-br from-graphite-2 via-[#18171f] to-black shadow-2xl ring-1 ring-lavender/30"
+                                        ? "border-accent/60 bg-gradient-to-br from-graphite-2 via-[#151a24] to-black shadow-2xl ring-1 ring-accent/30"
                                         : "border-line-strong bg-gradient-to-br from-graphite-2 to-black/80 hover:border-paper/30"
                                 )}
                             >
                                 <div
-                                    className="pointer-events-none absolute -right-10 -top-10 h-36 w-36 rounded-full bg-lavender/10 blur-2xl"
+                                    className="pointer-events-none absolute -right-10 -top-10 h-36 w-36 rounded-full bg-accent/10 blur-2xl"
                                     aria-hidden="true"
                                 />
                                 <div className="flex items-start justify-between">
@@ -243,7 +243,7 @@ const TechIndex = () => {
                                             {activeCategory === "all" ? "Most used" : `Featured ${activeCategory}`}
                                         </span>
                                     </div>
-                                    <span className="rounded-full border border-lavender/30 px-2 py-0.5 font-mono text-[10px] text-lavender">
+                                    <span className="rounded-full border border-accent/30 px-2 py-0.5 font-mono text-[10px] text-accent">
                                         {featured.categoryLabel}
                                     </span>
                                 </div>
@@ -265,7 +265,7 @@ const TechIndex = () => {
                                     <p className="line-clamp-1 font-display text-[11px] italic text-paper/70 sm:text-xs">
                                         {featured.joke ? `“${featured.joke}”` : featured.role}
                                     </p>
-                                    <span className="font-mono text-xs font-bold text-lavender">★</span>
+                                    <span className="font-mono text-xs font-bold text-accent">★</span>
                                 </div>
                             </button>
                         </motion.div>
@@ -287,7 +287,7 @@ const TechIndex = () => {
                                         className={cn(
                                             "group relative flex flex-col justify-between rounded-xl border p-4 text-left transition-all duration-300",
                                             inspected
-                                                ? "border-lavender/50 bg-graphite-2 shadow-lg ring-1 ring-lavender/20"
+                                                ? "border-accent/50 bg-graphite-2 shadow-lg ring-1 ring-accent/20"
                                                 : "border-line bg-black/30 hover:border-line-strong hover:bg-graphite-2/60"
                                         )}
                                     >
@@ -301,7 +301,7 @@ const TechIndex = () => {
                                             </span>
                                         </div>
                                         <div className="mt-3">
-                                            <div className="font-display text-lg italic text-paper transition-colors group-hover:text-lavender">
+                                            <div className="font-display text-lg italic text-paper transition-colors group-hover:text-accent">
                                                 {item.name}
                                             </div>
                                             <div className="mt-0.5 line-clamp-1 font-mono text-xs text-mute">{item.role}</div>
@@ -340,12 +340,12 @@ const TechIndex = () => {
                                             className={cn(
                                                 "group flex items-center gap-2.5 rounded-full border px-3.5 py-1.5 text-left transition-all duration-300",
                                                 inspected
-                                                    ? "border-lavender/50 bg-lavender/10 shadow-sm"
+                                                    ? "border-accent/50 bg-accent/10 shadow-sm"
                                                     : "border-line bg-black/25 hover:border-line-strong hover:bg-graphite-2"
                                             )}
                                         >
                                             <span className="font-mono text-[9px] text-mute-dim">{item.glyph}</span>
-                                            <span className="font-mono text-[11px] text-paper transition-colors group-hover:text-lavender">
+                                            <span className="font-mono text-[11px] text-paper transition-colors group-hover:text-accent">
                                                 {item.name}
                                             </span>
                                         </motion.button>
@@ -361,10 +361,10 @@ const TechIndex = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, amount: 0.4 }}
                             transition={{ duration: 0.7 }}
-                            className="relative overflow-hidden rounded-2xl border border-lavender/30 bg-gradient-to-br from-[#15131c] via-graphite-2 to-black p-6 shadow-2xl sm:p-8"
+                            className="relative overflow-hidden rounded-2xl border border-accent/30 bg-gradient-to-br from-[#121824] via-graphite-2 to-black p-6 shadow-2xl sm:p-8"
                         >
                             <div
-                                className="pointer-events-none absolute right-6 top-6 hidden select-none font-mono text-xs text-lavender opacity-10 sm:block"
+                                className="pointer-events-none absolute right-6 top-6 hidden select-none font-mono text-xs text-accent opacity-10 sm:block"
                                 aria-hidden="true"
                             >
                                 <p>∇_θ L(θ) = E_x [∇_θ log p_θ(x)]</p>
@@ -373,15 +373,15 @@ const TechIndex = () => {
 
                             <div className="relative z-10 flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
                                 <div className="max-w-xl">
-                                    <div className="flex items-center gap-2.5 font-mono text-[10px] uppercase tracking-[0.25em] text-lavender">
-                                        <span className="inline-block h-1.5 w-1.5 rounded-sm bg-lavender" />
+                                    <div className="flex items-center gap-2.5 font-mono text-[10px] uppercase tracking-[0.25em] text-accent">
+                                        <span className="inline-block h-1.5 w-1.5 rounded-sm bg-accent" />
                                         <span>Degree in progress</span>
                                     </div>
                                     <h3 className="mt-2 font-display text-xl italic text-paper sm:text-2xl">
                                         {educationSpotlight.degree}
                                     </h3>
                                     <p className="mt-0.5 font-mono text-xs text-mute-dim">{educationSpotlight.institution}</p>
-                                    <p className="mt-3 border-l-2 border-lavender/50 pl-3 font-display text-xs italic leading-relaxed text-paper/90 sm:text-sm">
+                                    <p className="mt-3 border-l-2 border-accent/50 pl-3 font-display text-xs italic leading-relaxed text-paper/90 sm:text-sm">
                                         &ldquo;{educationSpotlight.quote}&rdquo;
                                     </p>
                                 </div>
@@ -390,9 +390,9 @@ const TechIndex = () => {
                                     {educationSpotlight.domains.map((domain) => (
                                         <div
                                             key={domain}
-                                            className="flex items-center gap-1.5 rounded-full border border-lavender/20 bg-lavender/5 px-3 py-1 font-mono text-[11px] text-paper backdrop-blur-sm"
+                                            className="flex items-center gap-1.5 rounded-full border border-accent/20 bg-accent/5 px-3 py-1 font-mono text-[11px] text-paper backdrop-blur-sm"
                                         >
-                                            <span className="h-1 w-1 rounded-full bg-lavender" />
+                                            <span className="h-1 w-1 rounded-full bg-accent" />
                                             <span>{domain}</span>
                                         </div>
                                     ))}
@@ -434,13 +434,13 @@ const TechIndex = () => {
                                     >
                                         <span
                                             aria-hidden="true"
-                                            className="block select-none font-display text-[20vw] italic leading-none text-paper/[0.05] transition-colors duration-500 group-hover:text-lavender/20 sm:text-[13vw] lg:text-[12vw]"
+                                            className="block select-none font-display text-[20vw] italic leading-none text-paper/[0.05] transition-colors duration-500 group-hover:text-accent/20 sm:text-[13vw] lg:text-[12vw]"
                                         >
                                             {item.step}
                                         </span>
-                                        <div className="relative -mt-6 border-l border-line-strong py-1 pl-4 transition-colors duration-300 group-hover:border-lavender/50 sm:-mt-10">
-                                            <span className="absolute -left-[3px] top-2 block h-1.5 w-1.5 rounded-full bg-lavender transition-transform duration-300 group-hover:scale-150" />
-                                            <div className="font-mono text-[10px] font-semibold text-lavender">{item.step}</div>
+                                        <div className="relative -mt-6 border-l border-line-strong py-1 pl-4 transition-colors duration-300 group-hover:border-accent/50 sm:-mt-10">
+                                            <span className="absolute -left-[3px] top-2 block h-1.5 w-1.5 rounded-full bg-accent transition-transform duration-300 group-hover:scale-150" />
+                                            <div className="font-mono text-[10px] font-semibold text-accent">{item.step}</div>
                                             <div className="mt-1 font-display text-lg italic text-paper sm:text-xl">{item.label}</div>
                                             <div className="mt-1.5 font-mono text-[11px] leading-relaxed text-mute-dim">
                                                 {item.desc}
@@ -448,7 +448,7 @@ const TechIndex = () => {
 
                                             {/* Aside held closed until hover. */}
                                             <div className="grid grid-rows-[0fr] opacity-0 transition-all duration-500 ease-out group-hover:mt-3 group-hover:grid-rows-[1fr] group-hover:opacity-100">
-                                                <p className="overflow-hidden font-display text-xs italic leading-snug text-lavender/90">
+                                                <p className="overflow-hidden font-display text-xs italic leading-snug text-accent/90">
                                                     &ldquo;{item.joke}&rdquo;
                                                 </p>
                                             </div>
