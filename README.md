@@ -17,7 +17,6 @@ This README is just the front door.
 
 <br/>
 
-[![Portfolio](https://img.shields.io/badge/Portfolio-Open_it-7aa7ff?style=for-the-badge&labelColor=0a0b0e)](https://portfolio-gamma-five-pkp8stomoa.vercel.app/)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Ayush_Pathak-7aa7ff?style=for-the-badge&logo=linkedin&logoColor=e9ebef&labelColor=0a0b0e)](https://in.linkedin.com/in/ayush-pathak-75a985293)
 [![Email](https://img.shields.io/badge/Email-Say_hi-5ec4a6?style=for-the-badge&logo=gmail&logoColor=e9ebef&labelColor=0a0b0e)](mailto:ayushpathak13022006@gmail.com)
 
